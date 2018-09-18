@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>上传算法</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+
+    <link rel="stylesheet" href="css/shards.css">
+    <link rel="stylesheet" href="css/shards-demo.css">
+
+    <!--<link rel="stylesheet" href="css/amazeui.css">-->
+    <link href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/aicodes_detail.css">
+</head>
+<body style="background-color: white;padding: 0;margin: 0;">
+<div id="app">
+    <header class="am-topbar">
+        <h1 class="am-topbar-brand">
+            <img src="images/logo_purple.png" height="32">
+        </h1>
+        <button class="am-topbar-btn am-topbar-toggle am-show-sm-only"
+                data-am-collapse="{target: '#doc-topbar-collapse-4'}"> <span class="am-icon-bars"></span>
+        </button>
+
+        <div id="doc-topbar-collapse-4" class="am-collapse am-topbar-collapse">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li><a href="./aicodes_home.html">首页</a></li>
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle>
+                        分类 <span class="am-icon-caret-down"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><a href="#">强化学习</a></li>
+                        <li><a href="#">计算机视觉</a></li>
+                        <li><a href="#">自然语言处理</a></li>
+                        <li><a href="#">通用人工智能</a></li>
+                        <li><a href="#">语音合成</a></li>
+                        <li><a href="#">语音识别</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="am-topbar-form am-topbar-left am-form-inline" role="search">
+                <div class="am-form-group">
+                    <input type="text" style="border-radius: 20px;" placeholder="搜索">
+                </div>
+            </form>
+            <div v-if="!isLogin" class="am-topbar-right">
+                <button class="btn btn-white btn-pill am-topbar-btn" style="font-size: 1.3rem"
+                        data-am-modal="{target: '#doc-modal-110', closeViaDimmer: 0, width: 400, height: 460}">注册</button>
+            </div>
+            <div v-if="!isLogin" class="am-topbar-right">
+                <button class="btn btn-primary btn-pill am-topbar-btn" style="font-size: 1.3rem"
+                        data-am-modal="{target: '#doc-modal-110', closeViaDimmer: 0, width: 400, height: 460}">登录</button>
+            </div>
+
+            <div v-if="isLogin" class="am-topbar-right">
+                <button class="btn btn-pill btn-warning am-topbar-btn" style="font-size: 1.3rem">上传模型</button>
+            </div>
+            <div v-if="isLogin" class="am-topbar-right am-nav" style="height: 100%!important;margin-top: 10px;margin-bottom: auto">
+                <img :src="user.user_avatar_out_url" width="30" height="30" class="am-circle">
+                <a href=""><span class="fd-txt-white">{{user.user_name}}</span></a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-110">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd fd-txt-gray fd-txt-md">3秒快速注册，输入真实邮箱无需验证
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd am-margin-vertical-lg">
+                <div class="am-tabs" data-am-tabs>
+                    <ul class="am-tabs-nav am-nav am-nav-tabs">
+                        <li class="am-active"><a href="#tab1">注册</a></li>
+                        <li><a href="#tab2">登录</a></li>
+                    </ul>
+                    <div class="am-tabs-bd">
+                        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+                            <div class="fd-txt-md fd-txt-orange">如果已有StrangeAI/萝莉萝莉账号可直接登录</div>
+                            <div>
+                                <input ref="ip1" class="am-margin-vertical-sm" placeholder="邮箱" style="width: 100%">
+                                <input ref="ip2" class="am-margin-vertical-sm" placeholder="设置密码" style="width: 100%">
+                                <input ref="ip3" class="am-margin-vertical-sm" placeholder="确认密码" style="width: 100%">
+                                <input ref="ip4" class="am-margin-vertical-sm" placeholder="用户名(中英文)" style="width: 100%">
+                            </div>
+                            <div class="am-g">
+                                <p v-if="isRegisterSuccess" class="am-u-lg-9 am-u-md-9 am-u-sm-9 fd-txt-orange fd-txt-md" style="float: left;margin-top: 10px">注册成功！正在刷新本页...</p>
+                                <button class="am-u-lg-3 am-u-md-3 am-u-sm-3 btn btn-success btn-lg"
+                                        style="font-size: 1.5rem;float: right" @click="register">注册</button>
+                            </div>
+                        </div>
+                        <div class="am-tab-panel am-fade" id="tab2">
+                            <div>
+                                <input ref="ip5" v-model="ip5" class="am-margin-vertical-sm" placeholder="邮箱/手机号" style="width: 100%">
+                                <input ref="ip6" class="am-margin-vertical-sm" placeholder="密码" style="width: 100%">
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="font-size: 1.5rem;float: right" @click="login">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="am-container" style="margin-top: 2rem;margin-bottom: 5rem;padding: 2rem;">
+        <div class="am-container am-g">
+            <div class="am-u-md-8 am-sm-12 am-padding-0">
+                <span class="fd-txt-xl fd-txt-orange am-padding-0"><strong><a href="aicodes_home.html" style="color: #ff7c29">{{currentAiCode.code_author_user_name}}</a></strong>/{{currentAiCode.code_title}}</span>
+            </div>
+            <div class="am-u-md-4 am-sm-0 am-padding-0">
+                <div class="am-fr">
+                    <span class="badge badge-info">{{frameworkMap[currentAiCode.code_framework]}}</span>
+                    <span class="badge badge-outline-dark">{{catClass1[currentAiCode.code_category_class_1]}}</span>
+                    <span class="badge badge-warning">{{lanMap[currentAiCode.code_lan]}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-padding-vertical-lg">
+            <p class="fd-txt-md fd-txt-gray">{{currentAiCode.code_desc}}</p>
+        </div>
+
+        <div class="info-wrapper am-vertical-align am-padding-vertical-lg">
+            <ul class="am-avg-sm-1 am-avg-md-5 am-avg-lg-5 am-text-center am-vertical-align-middle" style="width: 100%;margin: 0!important;">
+                <li>
+                    <p style="margin: 0!important;"><span class="am-icon-first-order am-padding-horizontal-sm"></span>{{frameworkMap[currentAiCode.code_framework]}}</p>
+                </li>
+                <li>
+                    <p><span class="am-icon-code am-padding-horizontal-sm"></span>{{lanMap[currentAiCode.code_lan]}}</p>
+                </li>
+                <li>
+                    <p><span class="am-icon-balance-scale am-padding-horizontal-sm"></span>GPL</p>
+                </li>
+                <li>
+                    <p><span class="am-icon-file am-padding-horizontal-sm"></span>{{currentAiCode.code_file_size}}M</p>
+                </li>
+                <li>
+                    <p><span class="am-icon-download am-padding-horizontal-sm"></span>下载数 {{currentAiCode.code_downloads_num}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="am-padding-vertical-sm am-text-center func-btn-grp">
+            <ul class="am-avg-sm-3 am-avg-md-6 am-avg-lg-6 am-padding-0">
+                <li class="am-padding-sm"><button type="button" class="btn btn-outline-primary" style="font-size: 1.6rem;"><span class="am-icon-heart"></span> {{currentAiCode.code_stars_num}}</button></li>
+                <li class="am-padding-sm"><button type="button" class="btn btn-info" style="font-size: 1.6rem;"><span class="am-icon-comment"></span> 23评论</button></li>
+                <li class="am-padding-sm">
+                    <button type="button" class="btn btn-secondary" style="font-size: 1.6rem;"
+                            data-am-modal="{target: '#doc-modal-111', closeViaDimmer: 0, width: 400, height: 530}"
+                    @click="generateShareImg"><span class="am-icon-share"></span> 分享项目
+                </button></li>
+                <li class="am-padding-sm"><button type="button" class="btn btn-black" style="font-size: 1.6rem;"><span class="am-icon-download"></span> 下载模型</button></li>
+                <li class="am-padding-sm"><button type="button" class="btn btn-light" style="font-size: 1.6rem;"><span class="am-icon-download"></span> 下载Note</button></li>
+                <li class="am-padding-sm"><button data-am-collapse="{target: '#pay-panel'}" type="button" class="btn btn-success" style="font-size: 1.6rem;"><span class="am-icon-download"></span> 源代码</button></li>
+            </ul>
+        </div>
+
+        <!-- popup modal share the QRCode -->
+        <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-111">
+            <div class="am-modal-dialog">
+                <div class="am-modal-hd fd-txt-gray">长按图片保存本地分享
+                    <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                </div>
+                <div v-if="!isShareImgReady" class="am-modal-bd am-padding-lg">
+                    <i class="am-icon-spinner am-icon-spin am-icon-lg am-margin-top-lg"></i>
+                    加载中
+                </div>
+                <div v-if="isShareImgReady" id="share-panel">
+                    <!-- show the html2canvas image -->
+                    <img id="share-img-placeholder" width="350px" height="460px">
+                </div>
+             </div>
+        </div>
+
+
+        <!-- This part is using for convert to image, not showing -->
+        <!--<div id="card-to-show" class="card" style="width: 350px;height: 480px;visibility: hidden;">-->
+            <!--&lt;!&ndash;<img :src="currentAiCode.code_pic_url" width="100%" height="240">&ndash;&gt;-->
+            <!--<div :style="{backgroundImage:'url(' + currentAiCode.code_pic_url + ')'}"-->
+                 <!--style="height: 240px;width: 100%;border-radius: 10px 10px 0 0;background-size: cover;padding-top: 100px">-->
+                <!--<h1 class="fd-txt-md am-text-center" style="color:white;font-size: 2.5rem">{{currentAiCode.code_title}}</h1>-->
+            <!--</div>-->
+            <!--<div class="am-padding-lg">-->
+                <!--<span class="badge badge-secondary">{{frameworkMap[currentAiCode.code_framework]}}</span>-->
+                <!--<span class="badge badge-warning">{{lanMap[currentAiCode.code_lan]}}</span>-->
+                <!--<span class="badge badge-primary">{{catClass1[currentAiCode.code_category_class_1]}}</span>-->
+                <!--<p class="fd-txt-sm fd-txt-two-line-no-wrap">{{currentAiCode.code_desc}}</p>-->
+            <!--</div>-->
+            <!--<div class="am-g">-->
+                <!--<div class="am-u-lg-8 am-u-md-8 am-u-sm-8" style="margin-top: 15px">-->
+                            <!--<span class="fd-txt-md"><img src="images/logo_black.png" width="26" height="26"> <strong>奇异AI</strong>-->
+                            <!--<span class="fd-txt-sm">- 国内首个AI算法交易平台</span></span>-->
+                <!--</div>-->
+                <!--<div class="am-u-lg-4 am-u-md-4 am-u-sm-4 am-fr" >-->
+                    <!--<div id="share-qrcode" style="width: 100%;height: 100%"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!-- pay panel -->
+        <div class="am-collapse" id="pay-panel">
+            <div class="am-padding-lg pay-panel">
+                <p v-if="!isFree" class="fd-txt-gray fd-txt-md">奇异AI付费算法，加入9.9/年会员，获取所有算法免费下载权限，还能获得：</p>
+                <p v-if="isFree" class="fd-txt-gray fd-txt-md">奇异AI算法平台，加入奇异会员你将获得<span class="fd-txt-orange">(本代码免费)</span></p>
+                <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
+                <div class="am-g">
+                    <div class="am-u-sm-8 am-u-md-3 am-u-lg-3"><p class="fd-txt-md fd-txt-gray">源码git项目邀请, 持续更新</p></div>
+                    <div class="am-u-sm-2 am-u-md-7 am-u-lg-7"><p></p></div>
+                    <div class="am-u-sm-2 am-u-md-2 am-u-lg-2 am-fr"><span class="am-icon-check am-fr" style="color: #2ae68b"></span></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-8 am-u-md-3 am-u-lg-3"><p class="fd-txt-md fd-txt-gray">百度云现成模型、数据下载链接</p></div>
+                    <div class="am-u-sm-2 am-u-md-7 am-u-lg-7"><p></p></div>
+                    <div class="am-u-sm-2 am-u-md-2 am-u-lg-2 am-fr"><span class="am-icon-check am-fr" style="color: #2ae68b"></span></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-8 am-u-md-3 am-u-lg-3"><p class="fd-txt-md fd-txt-gray">奇异AI社群邀请</p></div>
+                    <div class="am-u-sm-2 am-u-md-7 am-u-lg-7"><p></p></div>
+                    <div class="am-u-sm-2 am-u-md-2 am-u-lg-2 am-fr"><span class="am-icon-check am-fr" style="color: #2ae68b"></span></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-8 am-u-md-3 am-u-lg-3"><p class="fd-txt-md fd-txt-gray">代码答疑解惑</p></div>
+                    <div class="am-u-sm-2 am-u-md-7 am-u-lg-7"><p></p></div>
+                    <div class="am-u-sm-2 am-u-md-2 am-u-lg-2 am-fr"><span class="am-icon-check am-fr" style="color: #2ae68b"></span></div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-8 am-u-md-3 am-u-lg-3"><p class="fd-txt-md fd-txt-gray">训练自己的数据集指导</p></div>
+                    <div class="am-u-sm-2 am-u-md-7 am-u-lg-7"><p></p></div>
+                    <div class="am-u-sm-2 am-u-md-2 am-u-lg-2 am-fr"><span class="am-icon-check am-fr" style="color: #2ae68b"></span></div>
+                </div>
+
+                <div v-if="!isFree">
+                    <div class="am-g">
+                        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                            <p>该项目价格：<span class="am-text-lg fd-txt-gray"><strong><em>￥{{currentAiCode.code_price}}</em></strong></span></p>
+                            <p>Or 获取奇异AI <span class="fd-txt-red">9.9/年</span> 年费会员<span class="am-text-lg fd-txt-sm"> - 扫描二维码，支付后凭截图联系客服开通年费会员，一年内免费获取所有奇异AI算法</span></p>
+                        </div>
+                    </div>
+
+                    <div  class="am-g">
+                        <div class="am-u-sm-12 am-u-md-2 am-u-lg-2 am-padding-lg">
+                            <img src="images/skm.jpg" width="100" height="100">
+                        </div>
+                        <div class="am-u-sm-12 am-u-md-10 am-u-lg-10 am-padding-lg">
+                            <div class="am-text-xs fd-txt-gray am-margin-0 am-fl">* 我们只面向普通开发者以极低价格出售，公司或项目使用请从公众号后台申请合作</div>
+                            <div class="am-text-xs fd-txt-gray am-margin-0 am-fl">* 我们的团队为保证代码的可运行性付出了大量心血</div>
+                            <div class="am-text-xs fd-txt-gray am-margin-0 am-fl">* 所付金额用于模型存储以及模型训练所付出的昂贵GPU费用 </div>
+                            <div class="am-text-xs fd-txt-gray am-margin-0 am-fl">* 付款后凭截图添加奇异AI客服（页面最下方）并提供gitlab用户名，受邀加入项目</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="isFree" class="am-g">
+                    <div class="am-u-sm-7 am-u-md-3 am-u-lg-3">
+                        <span class="fd-txt-gray fd-txt-md"><strong>项目源地址为：</strong></span>
+                    </div>
+                    <div class="am-u-sm-1 am-u-md-3 am-u-lg-3"><p></p></div>
+                    <div class="am-u-sm-4 am-u-md-6 am-u-lg-6 am-fr">
+                        <a :href="currentAiCode.code_git_url" target="_blank" class="fd-txt-orange">{{currentAiCode.code_git_url}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- markdown -->
+        <div class="md-style am-padding-lg" style="max-width: 100%;margin-top: 30px">
+            <h1 style="font-size: 1.9rem!important;">奇异独家部署文档</h1>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
+            <div v-html="compiledMarkdown"></div>
+        </div>
+        <div v-if="isShowLoading" class="am-text-center am-margin-lg" style="color: #ff7c29">
+            <i class="am-icon-spinner am-icon-spin am-icon-lg"></i>
+            加载中
+        </div>
+    </section>
+
+    <section class="am-container" style="margin-top: 2rem;margin-bottom: 5rem;padding: 2rem;">
+        <div class="am-text-center">
+            <h1 class="fd-txt-gray">热门评论</h1>
+        </div>
+        <div>
+            <div class="pay-panel am-padding-lg am-text-center">
+                Coming Soon
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="blog-footer" style="background-image: -webkit-linear-gradient(left, #3e3e3e, #3e3e3e);padding-top: 8rem">
+        <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-footer-padding">
+            <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+                <h3>StrangeAI 团队简介</h3>
+                <p class="am-text-sm">StrangeAI团队提供AI工业级别AI算法<br> 区块链/计算机视觉/强化学习 <br>
+                    由来自腾讯、浙大、新加坡南阳理工大学硕博组成的高精尖科技团队，团队在自动驾驶、智能安防等领域具有多项创新性成果</p>
+            </div>
+            <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+                <h3>社交账号</h3>
+                <p>
+                    <a href=""><span class="am-icon-qq am-icon-btn fd-clr-gray"></span></a>
+                    <a href=""><span class="am-icon-github am-icon-btn fd-clr-gray"></span></a>
+                    <a href=""><span class="am-icon-weibo am-icon-btn fd-clr-gray"></span></a>
+                    <a href=""><span class="am-icon-reddit am-icon-btn fd-clr-gray"></span></a>
+                    <a href=""><span class="am-icon-weixin am-icon-btn fd-clr-gray"></span></a>
+                </p>
+                <h3>Credits</h3>
+                <p>我们追求卓越，然时间、经验、能力有限。StrangeAI 有很多不足的地方，希望大家包容、不吝赐教，给我们提意见、建议。感谢你们！</p>
+            </div>
+            <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="https://www.openai.com/" target="_blank">OpenAI</a></li>
+                    <li ><a href="" target="_blank">DeepMind</a></li>
+                    <li><a href="http://bs.loliloli.pro" target="_blank">白说</a></li>
+                    <li><a href="http://loliloli.pro" target="_blank">Path</a></li>
+                    <li><a href="https://tensorflow.org" target="_blank">TensorFlow</a></li>
+                </ul>
+            </div>
+
+            <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+                <div style="height: 40px"></div>
+                <ul class="am-avg-sm-1 am-avg-md-2 am-avg-lg-2">
+                    <li class="am-animation-slide-top am-text-center" data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                        <img src="img/qrcode.png" alt="" width="60%" height="60%">
+                        <p><i class="am-icon-weixin"></i> 合作微信</p>
+                    </li>
+                    <li class="am-animation-slide-top am-text-center" data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                        <img src="./images/qrcode_sai.jpg" alt="" width="60%" height="60%">
+                        <p><i class="am-icon-download"></i> 关注公众号</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="am-text-center">© 2018 奇异(StrangeAI), Inc. All Rights Reserved</p>
+    </footer>
+</div>
+
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<![endif]-->
+<script src="https://cdn.bootcss.com/marked/0.4.0/marked.min.js"></script>
+<script src="https://unpkg.com/lodash@4.16.0"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script src="https://unpkg.com/vue-cookies@1.5.5/vue-cookies.js"></script>
+
+<script src="./js/common.js"></script>
+<script src="./scripts/upload_codes.js"></script>
+
+</body>
+</html>

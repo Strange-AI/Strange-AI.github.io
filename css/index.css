@@ -1,0 +1,177 @@
+p{
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.goods-item{
+    background-color: #ffffff;
+    border-radius: 8px;
+    /*box-shadow: 0 30px 29px rgba(0, 0, 0, 0.36), inset 0 0 29px white;*/
+    box-shadow: 1px 1px 50px rgba(133, 126, 128, 0.24);
+}
+.goods-item .good-title{
+    margin: 5px 0 0 5px;
+    max-width: 200px;
+    padding-left: 2px;
+    font-size: 11px;
+    color: #373537;
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.goods-item img{
+    border-radius: 8px 8px 0 0;
+}
+.goods-item div{
+    margin: 0;
+}
+.goods-item .good-coupons{
+    margin: 0;
+}
+.goods-item .good-after-price{
+    margin: 0;
+    font-size: 10px;
+    color: #fa164e;
+}
+.goods-item .good-after-price-big{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: #fa164e;
+}
+.goods-item .good-sale-num{
+    font-size: 10px;
+    color: #857e80;
+    float: right;
+}
+.goods-item .good-item-price-wrapper{
+    padding: 0 5px 5px 5px;
+}
+
+.part-two{
+    margin-top: 20px;
+    width: 100%;
+    /*padding: 20px;*/
+    background: white;
+}
+.am-slides{
+    background-color: white;
+}
+
+
+/* 栏目精选 */
+.box {
+    padding: 20px;
+    height: 100px;
+    background-color: white;
+}
+.column-box{
+    padding-right: 20px;
+}
+.column-box p{
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.box-1 .column-box h2{
+    margin: 0;
+    font-size: 15px;
+    color: #fa704f;
+    font-weight: 600;
+}
+.box-1 .column-box p{
+    margin: 0;
+    font-size: 10px;
+}
+
+.box-2 .column-box h2{
+    margin: 0;
+    font-size: 15px;
+    color: #3ca690;
+    font-weight: 600;
+}
+.box-2 .column-box p{
+    margin: 0;
+    font-size: 10px;
+}
+
+.box-3 .column-box h2{
+    margin: 0;
+    font-size: 15px;
+    color: #4626a6;
+    font-weight: 600;
+}
+.box-3 .column-box p{
+    margin: 0;
+    font-size: 10px;
+}
+
+.box-4 .column-box h2{
+    margin: 0;
+    font-size: 15px;
+    color: #fa316d;
+    font-weight: 600;
+}
+.box-4 .column-box p{
+    margin: 0;
+    font-size: 10px;
+}
+.column-box img{
+    float: right;
+    margin-top: 10px;
+    max-width: 50px;
+    height:auto;
+}
+
+/* load more */
+.load-more{
+    text-align: center;
+    
+}
+.load-more a{
+    outline: none;
+    text-decoration: none;
+    color: #12c182;
+}
+
+
+/* rewrite some class in amaze ui */
+
+
+.am-pagination-prev a {
+    border-radius: 3.5rem !important;
+    border: None !important;
+    box-shadow: 1px 1px 50px rgba(133, 126, 128, 0.24);
+    /*margin: 2rem;*/
+    padding: 2rem;
+    background-color: white;
+    font-size: 3rem;
+}
+
+.am-pagination-next a {
+    border-radius: 3.5rem !important;
+    border: None !important;
+    box-shadow: 1px 1px 50px rgba(133, 126, 128, 0.24);
+    /*margin: 2rem;*/
+    padding: 2rem;
+    background-color: white;
+    font-size: 3rem;
+}
+
+.nav-bar{
+    /*padding-left:5px;*/
+    /*padding-right:5px;*/
+    /*line-height: 60px;*/
+    height: 200px!important;
+    width: 100%!important;
+    background-color: #8c8c8f;
+    /*background-image: -webkit-linear-gradient(left, #383838, #ff5994);*/
+    box-shadow: 10px 10px 850px rgba(133, 126, 128, 0.78);
+    overflow:auto;
+    overflow-x: hidden;
+}
+.am-topbar-nav {
+    background-color: #0a628f;
+}

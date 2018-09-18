@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>奇异AI-国内最大的AI代码平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="奇异AI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/shards.css">
+    <link rel="stylesheet" href="css/shards-demo.css">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--<link rel="stylesheet" href="css/buttons.css">-->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<!--[if lt IE 9]>
+<div class="am-modal am-modal-no-btn am-modal-active" tabindex="-1" id="doc-modal-1"
+     style="display: block; width: 400px; margin-left: -200px; margin-top: -112px;">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">365 安全卫士提醒</div>
+        <div class="am-modal-bd">你的浏览器太古董了，还不换一个你就奥特曼了
+            <a href="http://browsehappy.com/" target="_blank" class="am-btn am-btn-danger am-btn-sm am-radius"
+               rel="nofollow">速速点击换一个</a>
+        </div>
+    </div>
+</div>
+<![endif]-->
+
+<body>
+
+<header class="m-hd">
+    <section data-am-sticky class="am-show-md-up">
+        <div class="am-container">
+            <a href="/" rel="nofollow" class="m-logo"><i class="am-icon-spinner"></i>奇异AI</a>
+            <nav>
+                <ul class="m-nav am-nav am-nav-pills am-fr">
+                    <li><a href="./home.html" rel="nofollow">首页</a></li>
+                    <li class="am-dropdown" data-am-dropdown><a href="/anli.html" rel="nofollow"
+                                                                class="am-dropdown-toggle"
+                                                                data-am-dropdown-toggle>展示<span
+                            class="am-icon-angle-down" style="padding-left: 10px"></span></a>
+                        <ul class="am-dropdown-content">
+                            <li><a href="" rel="nofollow">自动驾驶目标检测</a></li>
+                            <li><a href="" rel="nofollow">自动驾驶目标分割</a></li>
+                            <li><a href="" rel="nofollow">智能安防-人脸检测</a></li>
+                            <li><a href="" rel="nofollow">智能安防-人脸比对</a></li>
+                            <li><a href="" rel="nofollow">人工智能聊天机器人</a></li>
+                            <li><a href="" rel="nofollow">语音合成指定人声音</a></li>
+                            <li><a href="" rel="nofollow">语音识别(中/英文)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/fuwu.html" rel="nofollow">新闻报道</a></li>
+                    <li><a href="http://bs.loliloli.pro" target="_blank">技术博客</a></li>
+                    <li><a href="./about.html" rel="nofollow">关于</a></li>
+                    <li><a href="#contact" rel="nofollow">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <nav data-am-widget="header" class="am-header am-show-sm-only">
+        <div class="am-header-left am-header-nav">
+            <a href="" rel="nofollow">
+                首页
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="/" rel="nofollow">奇异AI</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class="" data-am-offcanvas="{target: '#r-nav'}">
+                <i class="am-header-icon am-icon-lastfm"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 侧边栏内容 -->
+    <div id="r-nav" class="am-offcanvas">
+        <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+            <nav class="am-offcanvas-content">
+                <a href="/" rel="nofollow"><span class="logo"></span></a>
+                <p><a href="/" rel="nofollow">首页</a></p>
+                <p><a href="./aicodes_home.html" rel="nofollow">展示</a></p>
+                <p><a href="/fuwu.html" rel="nofollow">新闻报道</a></p>
+                <p><a href="http://bs.loliloli.pro" target="_blank">技术博客</a></p>
+                <p><a href="./about.html" rel="nofollow">关于</a></p>
+                <p><a href="#contact" rel="nofollow">联系我们</a></p>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<!-- Part 1 -->
+<div data-am-widget="slider" class="am-slider am-slider-i2" data-am-flexslider="{controlNav:false}"
+     style="height: 71rem!important; width:100%!important;background-image: url(http://ofonnfoku.bkt.clouddn.com/banner3.png);background-size: cover">
+    <div class="am-container am-slider-desc">
+        <div class="am-slider-content">
+            <h1 class="am-animation-slide-left" data-am-scrollspy="{animation: 'slide-left', delay: 100}"
+                style="font-size: 2.5rem;word-wrap:break-word;margin: 1.5rem">奇异AI Paas人工智能算法平台</h1>
+            <h2 data-am-scrollspy="{animation:'slide-right', delay: 600}" class="am-animation-slide-right"
+                style="margin: 1.2rem;font-size: 2.0rem;word-wrap:break-word">助力企业人工智能算法落地引用、个人AI学习</h2>
+            <br>
+            <br>
+            <a href="./aicodes_home.html">
+                <button class="btn btn-pill btn-secondary am-animation-slide-bottom am-animation-delay-1 am-padding-lg"
+                         data-am-scrollspy="{animation:'slide-bottom', delay: 100}"
+                        style="font-size: 1.5rem;width:150px!important;height: 50px!important;">
+                    立即浏览
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<section class="am-container" style="background-color: white;">
+    <div class="am-text-center" style="background-color: white;width: 100%;margin: 0;">
+        <div class="am-center am-padding-xl">
+            <p class="am-text-center fd-txt-lg fd-font" style="color: #131313;">我们的服务</p>
+        </div>
+        <section class="am-container am-padding-sm"
+                 style="margin-top: 5rem;margin-bottom: 5rem;background-color: white">
+            <ul class="am-avg-sm-1 am-avg-md-3 am-avg-lg-3 am-u-sm-centered am-margin-sm">
+                <li>
+                    <img src="./images/icon_safe.svg" width="100" height="100" data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                    <h1 style="color:black">可靠性</h1>
+                    <p class="am-padding-sm" data-am-scrollspy="{animation:'slide-bottom', delay: 20}">完整的深度学习算法，包含训练、预测脚本。所有深度学习源码、行业内解决方案均经过我们实际环境的测试，
+                    并且我们提供详尽的环境配置步骤</p>
+                </li>
+                <li>
+                    <img src="./images/icon_code.svg" width="100" height="100" data-am-scrollspy="{animation:'slide-bottom', delay: 100}">
+                    <h1 style="color:black">源码级定制化</h1>
+                    <p class="am-padding-sm" data-am-scrollspy="{animation:'slide-bottom', delay: 20}">可使用自己的数据集Finetune，节省宝贵时间。我们基于公开数据集，比如COCO，VOC，Cityscapes，OpenImage
+                        进行了许多大型模型的预训练，用户可以直接使用，在自有数据集上微调，可以立即投入生产使用，<strong>我们提供源码级方案而非固定死的API</strong>
+                    </p>
+                </li>
+                <li>
+                    <img src="./images/icon_help.svg" width="100" height="100" data-am-scrollspy="{animation:'slide-bottom', delay: 200}">
+                    <h1 style="color:black">人工服务</h1>
+                    <p class="am-padding-sm" data-am-scrollspy="{animation:'slide-bottom', delay: 20}">还在为代码跑不通而苦恼？还在为看不懂高深代码而微微蛋*？
+                        奇异AI为你提供客服一对一免费代码指导！有任何错误<strong>7*24</strong>咨询解决服务！</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+</section>
+
+<section class="am-container" style="padding: 0!important;">
+    <div class="am-text-center" style="background-color: #000000;margin: 0; width: 100%">
+        <div class="am-center am-padding-xl">
+            <p class="am-text-center fd-txt-lg fd-font" style="color: #ffffff;">视频 Demo</p>
+        </div>
+        <section class="am-container">
+            <ul class="am-avg-sm-1 am-avg-md-2 am-avg-lg-2 am-center">
+                <li class="am-text-center" data-am-scrollspy="{animation:'slide-bottom', delay: 50}">
+                    <video width="90%" height="300" controls>
+                        <source src="movie.ogg" type="video/ogg">
+                        <source src="./assets/videos/face.mp4" type="video/mp4">
+                        <source src="movie.webm" type="video/webm">
+                    </video>
+                    <p style="color: #ffffff;">Faces Detection & Age Prediction</p>
+                </li>
+                <li class="am-text-center" data-am-scrollspy="{animation:'slide-bottom', delay: 50}">
+                    <video width="90%" height="300" controls>
+                        <source src="movie.ogg" type="video/ogg">
+                        <source src="./assets/videos/car.mp4" type="video/mp4">
+                        <source src="movie.webm" type="video/webm">
+                        <object data="movie.mp4" width="100%" height="300">
+                            <embed width="100%" height="300" src="movie.swf">
+                        </object>
+                    </video>
+                    <p style="color: #ffffff;">Mask-RCNN with Full Speed</p>
+                </li>
+            </ul>
+            <ul class="am-avg-sm-1 am-avg-md-2 am-avg-lg-2 am-center">
+                <li class="am-text-center" data-am-scrollspy="{animation:'slide-bottom', delay: 50}">
+                    <video width="90%" height="300" controls>
+                        <source src="movie.ogg" type="video/ogg">
+                        <source src="./assets/videos/track.mp4" type="video/mp4">
+                        <source src="movie.webm" type="video/webm">
+                    </video>
+                    <p style="color: #ffffff;">Track Detection Simultaneously</p>
+                </li>
+                <li class="am-text-center" data-am-scrollspy="{animation:'slide-bottom', delay: 50}">
+                    <video width="90%" height="300" controls>
+                        <source src="movie.ogg" type="video/ogg">
+                        <source src="./assets/videos/car.mp4" type="video/mp4">
+                        <source src="movie.webm" type="video/webm">
+                        <object data="movie.mp4" width="100%" height="300">
+                            <embed width="100%" height="300" src="movie.swf">
+                        </object>
+                    </video>
+                    <p style="color: #ffffff;">Traffic Detection</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="am-center am-padding-xl">
+            <p class="am-text-center fd-txt-lg fd-font" style="color: #ffffff;">所有代码完全开源，立即浏览获取代码</p>
+        </div>
+    </div>
+</section>
+
+<section class="am-container" style="background-image: -webkit-linear-gradient(left, #4207ff, #ff8a4c);">
+    <div class="m-services m-home-box">
+        <section class="am-container am-padding-xl">
+            <hgroup class="am-animation-slide-bottom am-animation-delay-1"
+                    data-am-scrollspy="{animation:'slide-bottom', delay: 100}">
+                <h1>我们的服务</h1>
+                <p class="fd-txt-white">为中小团队、创业公司，科研人员提供最快速、最无痛的人工智能算法解决方案，
+                    我们的算法包含了最新论文算法、通用计算机视觉框架、高性能行业内可使用的算法。</p>
+            </hgroup>
+            <ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 am-thumbnails">
+                <li class="am-padding-lg am-animation-slide-top" data-am-scrollspy="{animation:'slide-top', delay: 0}">
+                    <h2>无错性</h2>
+                    <p class="fd-txt-white">
+                        我们的开源代码均经过专业修正，并具有详尽的部署文档、依赖文档等，所有代码均有详细的测试环境要求，只需安装测试环境即可无错安装，并配有相应的Docker环境</p>
+                </li>
+                <li class="am-padding-lg am-animation-slide-top" data-am-scrollspy="{animation:'slide-top', delay: 0}">
+                    <h2>GPL</h2>
+                    <p class="fd-txt-white">所有代码均给予GPL协议，开源用户可以自由的在项目中使用，完全合法的得到我们的授权，我们的代码也全部来自于内部核心知识成果</p>
+                </li>
+                <li class="am-padding-lg am-animation-slide-top am-animation-delay-1"
+                    data-am-scrollspy="{animation:'slide-top', delay: 100}">
+                    <h2>高新能</h2>
+                    <p class="fd-txt-white">我们致力于提供行业内可行的，开箱即用的高性能框架。我们注重算法的高性能优化设计，企业完全可以用到实际产品之中</p>
+                </li>
+                <li class="am-padding-lg am-animation-slide-top am-animation-delay-1"
+                    data-am-scrollspy="{animation:'slide-top', delay: 100}">
+                    <h2>人工帮助</h2>
+                    <p class="fd-txt-white">我们提供人性化周到的人工帮助，无论在部署还是实现中遇到的任何问题，我们都有专门的售后工程师给予解答。</p>
+                </li>
+
+            </ul>
+        </section>
+    </div>
+</section>
+
+<section class="am-container" style="background-color: black;padding-top: 11rem!important; padding-bottom: 11rem !important;">
+    <div class="testimonial-slider am-text-center" style="background-color: black">
+        <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0" style="background-color: transparent">
+            <ul class="am-slides" style="background-color: transparent">
+                <li>
+                    <div class="avatar"><img src="images/people1.jpg" alt="Sedna Testimonial Avatar"></div>
+                    <h2>"奇异AI的开源算法与外包团队花费几十万开发的算法并无二致，着力推荐！"</h2>
+                    <p class="author">王猛， Co-Founder，执行总监兼市场销售总经理</p>
+                </li>
+                <li>
+                    <div class="avatar"><img src="images/people2.jpg" alt="Sedna Testimonial Avatar"></div>
+                    <h2>"GitHub上许多代码无法运行，这上面一两块钱的程序，对于我的实验和论文有很大作用，大大提高了效率"</h2>
+                    <p class="author">刘璐，学生， 复旦大学研究生</p>
+                </li>
+                <li>
+                    <div class="avatar"><img src="images/people4.jpg" alt="Sedna Testimonial Avatar"></div>
+                    <h2>"这里面的很多算法比我们实现的更快，精度更高，没想到"</h2>
+                    <p class="author">肖*, 研究员，博世感知部门研究员</p>
+                </li>
+                <li>
+                    <div class="avatar"><img src="images/people5.jpg" alt="Sedna Testimonial Avatar"></div>
+                    <h2>"跟奇异AI的老师们交流很多，在他们的帮助下完成了许多有趣的科研项目"</h2>
+                    <p class="author">吴丽, 研究员，中南大学大学博士研究生</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="am-container m-home-box m-partner">
+    <hgroup data-am-scrollspy="{animation:'slide-bottom', delay: 100}" class="am-padding-lg">
+        <h1 style="color: black;">合作伙伴</h1>
+        <p>我们具有来自于国内外的世界500强企业成为我们的合作伙伴，与他们一起提供最先进的算法技术</p>
+    </hgroup>
+    <ul class="am-avg-lg-8 am-avg-md-8 am-avg-sm-2  am-thumbnails am-padding-lg"
+        data-am-scrollspy="{animation:'slide-bottom', delay: 100}">
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 44}">
+            <img src="images/tencent.png" alt="腾讯" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 45}">
+            <img src="images/dianxin.png" alt="中国电信" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 399}">
+            <img src="images/aliyun.png" alt="阿里云" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 286}">
+            <img src="images/canon.png" alt="佳能" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 114}">
+            <img src="images/baidu.png" alt="百度" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 72}">
+            <img src="images/microsoft.png" alt="微软" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 190}">
+            <img src="images/apple.png" alt="苹果" class="am-img-responsive"></li>
+        <li data-am-scrollspy="{animation:'slide-bottom', delay: 99}">
+            <img src="images/adobe.png" alt="adobe" class="am-img-responsive"></li>
+    </ul>
+</section>
+
+<div class="m-home-box m-contact" id="contact">
+    <section class="am-container">
+        <hgroup data-am-scrollspy="{animation:'slide-bottom', delay: 100}">
+            <h2>联系我们</h2>
+            <p>你可以通过以下方式和我们取得联系。</p>
+        </hgroup>
+        <ul class="am-avg-lg-4 am-avg-md-4 am-avg-sm-2 am-thumbnails">
+            <li data-am-scrollspy="{animation:'slide-bottom', delay: 2}"><i class="am-icon-qq"></i> 1195889656
+            </li>
+            <li data-am-scrollspy="{animation:'slide-bottom', delay: 41}"><i class="am-icon-phone-square"></i>
+                17603066554
+            </li>
+            <li data-am-scrollspy="{animation:'slide-bottom', delay: 51}">
+                <i class="am-icon-weixin"></i> jintianiloveu
+            </li>
+            <li data-am-scrollspy="{animation:'slide-bottom', delay: 211}">
+                <i class="am-icon-envelope"></i> jinfagang19@163.com
+            </li>
+        </ul>
+    </section>
+</div>
+<div class="m-contact-us">
+    <section class="am-container">
+        <div class="am-g">
+            <span class="m-u-sm-12 am-u-md-9 am-u-lg-10" data-am-scrollspy="{animation:'slide-left', delay: 100}">想要以最低的价格获取到最具有服务保障的算法吗？立即与我们联系</span>
+            <span class="m-u-sm-12 am-u-md-3 am-u-lg-2" data-am-scrollspy="{animation:'slide-right', delay: 100}">
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1195889656&site=qq&menu=yes"
+                   class="btn btn-primary btn-pill" rel="external nofollow" style="text-decoration: none;font-size: 1.5rem">马上联系</a>
+            </span>
+        </div>
+    </section>
+</div>
+
+
+<footer class="blog-footer" style="background-image: -webkit-linear-gradient(left, #14050f, #14050f);">
+    <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-footer-padding">
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <h3>StrangeAI 团队简介</h3>
+            <p class="am-text-sm">StrangeAI团队提供AI工业级别AI算法<br> 区块链/计算机视觉/强化学习 <br>
+                由来自腾讯、浙大、新加坡南阳理工大学硕博组成的高精尖科技团队，团队在自动驾驶、智能安防等领域具有多项创新性成果</p>
+        </div>
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <h3>社交账号</h3>
+            <p>
+                <a href=""><span class="am-icon-qq am-icon-btn fd-clr-gray"></span></a>
+                <a href="https://github.com/Strange-AI" target="_blank"><span class="am-icon-github am-icon-btn fd-clr-gray"></span></a>
+                <a href=""><span class="am-icon-weibo am-icon-btn fd-clr-gray"></span></a>
+                <a href=""><span class="am-icon-reddit am-icon-btn fd-clr-gray"></span></a>
+                <a href=""><span class="am-icon-weixin am-icon-btn fd-clr-gray"></span></a>
+            </p>
+            <h3>Credits</h3>
+            <p>我们追求卓越，然时间、经验、能力有限。StrangeAI 有很多不足的地方，希望大家包容、不吝赐教，给我们提意见、建议。感谢你们！</p>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <h3>友情链接</h3>
+            <ul>
+                <li><a href="https://www.openai.com/" target="_blank">OpenAI</a></li>
+                <li ><a href="" target="_blank">DeepMind</a></li>
+                <li><a href="http://bs.loliloli.pro" target="_blank">白说</a></li>
+                <li><a href="http://loliloli.pro" target="_blank">Path</a></li>
+                <li><a href="https://tensorflow.org" target="_blank">TensorFlow</a></li>
+            </ul>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <div style="height: 40px"></div>
+            <ul class="am-avg-sm-1 am-avg-md-2 am-avg-lg-2">
+                <li class="am-animation-slide-top am-text-center"
+                    data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                    <img src="img/qrcode.png" alt="" width="60%" height="60%">
+                    <p><i class="am-icon-weixin"></i> 合作微信</p>
+                </li>
+                <li class="am-animation-slide-top am-text-center"
+                    data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                    <img src="./images/qrcode_sai.jpg" alt="" width="60%" height="60%">
+                    <p><i class="am-icon-download"></i> 关注公众号</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="blog-text-center">© 2018 奇异(StrangeAI), Inc. All Rights Reserved</p>
+</footer>
+
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/j2/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="js/j2/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="js/j2/polyfill/rem.min.js"></script>
+<script src="js/j2/polyfill/respond.min.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        var str = "http://www.imj2.com";
+        $("#code").qrcode({
+            render: "table",
+            width: 100,
+            height: 100,
+            text: str
+        });
+    });
+    //返回顶部
+    function imj2() {
+        this.init();
+    }
+    imj2.prototype = {
+        constructor: imj2,
+        init: function () {
+            this._initBackTop();
+        },
+        _initBackTop: function () {
+            var $backTop = this.$backTop = $('<div class="m-top-cbbfixed">' +
+                '<a class="m-top-weixin m-top-cbbtn"">' +
+                '<span class="m-top-weixin-icon"></span><div></div>' +
+                '</a>' +
+                '<a class="m-top-go m-top-cbbtn">' +
+                '<span class="m-top-goicon"></span>' +
+                '</a>' +
+                '</div>');
+            $('body').append($backTop);
+            $backTop.click(function () {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 120);
+            });
+            var timmer = null;
+            $(window).bind("scroll", function () {
+                var d = $(document).scrollTop(),
+                    e = $(window).height();
+                0 < d ? $backTop.css("bottom", "10px") : $backTop.css("bottom", "-90px");
+                clearTimeout(timmer);
+                timmer = setTimeout(function () {
+                    clearTimeout(timmer)
+                }, 100);
+            });
+        }
+
+    };
+    var imj2 = new imj2();
+    //end返回顶部
+</script>
+
+
+</body>
+</html>

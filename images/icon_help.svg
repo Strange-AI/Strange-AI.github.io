@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="774px" height="774px" viewBox="0 0 774 774" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#20BBFC" offset="0%"></stop>
+            <stop stop-color="#142EF1" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0.419354839,325 C0.419354839,504.26094 145.73906,649.580645 325,649.580645 C504.26094,649.580645 649.580645,504.26094 649.580645,325 C649.580645,145.73906 504.26094,0.419354839 325,0.419354839 C145.73906,0.419354839 0.419354839,145.73906 0.419354839,325 Z" id="path-2"></path>
+        <filter x="-16.6%" y="-12.7%" width="135.6%" height="135.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="8" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="8" dy="33" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="25" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.108653455   0 0 0 0 0.331636601   0 0 0 0 0.898145196  0 0 0 0.293733016 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工具箱" transform="translate(62.000000, 62.000000)" fill-rule="nonzero">
+            <g id="Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <path d="M481.880645,243.854839 L430.48871,295.246774 C425.079032,300.656452 408.85,300.656452 408.85,300.656452 C408.85,300.656452 365.572581,295.246774 360.162903,289.837097 C354.753225,284.427419 349.343548,238.445162 349.343548,238.445161 C349.343548,238.44516 349.343548,224.920967 354.753226,219.51129 L406.145161,168.119355 C406.145161,168.119355 411.554839,162.709677 403.440323,162.709677 C376.391936,162.709677 322.295162,162.709677 295.246774,189.758064 L289.837097,195.167742 C260.083871,224.920968 257.379033,273.608065 279.017742,306.066129 L176.233871,398.030645 C162.709677,411.554839 149.185484,446.717742 176.233871,473.766129 C203.282258,500.814516 238.445162,487.290323 251.969355,473.766129 C251.969355,473.766129 325,389.916129 343.933871,370.982258 C379.096774,395.325807 425.079032,392.620968 454.832258,362.867742 L460.241936,357.458065 C487.290323,330.409678 487.290323,276.312903 487.290323,249.264516 C487.290323,238.445162 481.880645,243.854839 481.880645,243.854839 Z M222.216129,457.537097 C205.987097,457.537097 192.462903,444.012903 192.462903,427.783871 C192.462903,411.554839 205.987097,398.030645 222.216129,398.030645 C238.44516,398.030645 251.969355,411.554839 251.969355,427.783871 C251.969355,444.012903 238.445161,457.537097 222.216129,457.537097 Z" id="Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>
