@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>奇异AI-国内最大的AI代码平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="奇异AI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/shards.css">
+    <link rel="stylesheet" href="css/shards-demo.css">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--<link rel="stylesheet" href="css/buttons.css">-->
+    <link rel="stylesheet" href="css/s_index.css">
+</head>
+
+<!--[if lt IE 9]>
+<div class="am-modal am-modal-no-btn am-modal-active" tabindex="-1" id="doc-modal-1"
+     style="display: block; width: 400px; margin-left: -200px; margin-top: -112px;">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">365 安全卫士提醒</div>
+        <div class="am-modal-bd">你的浏览器太古董了，还不换一个你就奥特曼了
+            <a href="http://browsehappy.com/" target="_blank" class="am-btn am-btn-danger am-btn-sm am-radius"
+               rel="nofollow">速速点击换一个</a>
+        </div>
+    </div>
+</div>
+<![endif]-->
+
+<body>
+
+<header class="am-topbar">
+    <h1 class="am-topbar-brand">
+        <img src="images/logo_black.png" height="32">
+    </h1>
+    <button class="am-topbar-btn am-topbar-toggle am-show-sm-only"
+            data-am-collapse="{target: '#doc-topbar-collapse-4'}"> <span class="am-icon-bars"></span>
+    </button>
+
+    <div id="doc-topbar-collapse-4" class="am-collapse am-topbar-collapse">
+        <ul class="am-nav am-nav-pills am-topbar-nav">
+            <li><a href="./index.html">首页</a></li>
+            <li><a href="./aicodes_home.html">旧版入口</a></li>
+            <li class="am-dropdown" data-am-dropdown>
+                <a class="am-dropdown-toggle" data-am-dropdown-toggle>
+                    分类 <span class="am-icon-angle-down"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="#">强化学习</a></li>
+                    <li><a href="#">计算机视觉</a></li>
+                    <li><a href="#">自然语言处理</a></li>
+                    <li><a href="#">通用人工智能</a></li>
+                    <li><a href="#">语音合成</a></li>
+                    <li><a href="#">语音识别</a></li>
+                </ul>
+            </li>
+        </ul>
+        <form class="am-topbar-form am-topbar-left am-form-inline" role="search">
+            <div class="am-form-group">
+                <input type="text" style="border-radius: 20px;" placeholder="搜索">
+            </div>
+        </form>
+    </div>
+</header>
+
+<div id="app">
+    <!-- Part 1 -->
+    <section class="am-container">
+        <div>
+            <h1 class="fd-txt-black fd-txt-bold">常用数据集下载&nbsp;&nbsp;<span class="fd-txt-md"><a class="fd-txt-green" href="https://github.com/Strange-AI/datasets" target="_blank">更多 >></a></span></h1>
+        </div>
+        <div class="am-g am-container am-margin-vertical-lg">
+            <div class="am-u-lg-4 hover-scale-up">
+                <a href="http://cocodataset.org" target="_blank" style="text-decoration: none">
+                    <div class="pay-panel shadow-green am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #39ffd8, #259c73);">
+                        <h1 class="fd-txt-bold fd-txt-black"><strong>Microsoft CoCo</strong></h1>
+                        <p class="fd-txt-white">微软推出的包含目标检测、实例分割、人体关键点定位等标注的大规模标注数据集</p>
+                    </div>
+                </a>
+            </div>
+            <div class="am-u-lg-4 hover-scale-up" >
+                <a href="http://host.robots.ox.ac.uk/pascal/VOC/" target="_blank" style="text-decoration: none">
+                    <div class="pay-panel shadow-purple am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #bc57ff, #9c2c7e);">
+                        <h1 class="fd-txt-bold fd-txt-black"><strong>Pascal VOC</strong></h1>
+                        <p class="fd-txt-white">牛津大学等高校组织的包含2007，2012大规模目标检测、分割数据集、行为识别等数据集</p>
+                    </div>
+                </a>
+            </div>
+            <div class="am-u-lg-4 hover-scale-up" >
+                <a href="https://www.cityscapes-dataset.com" target="_blank" style="text-decoration: none">
+                    <div class="pay-panel shadow-red am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #ff7f3c, #e57156);">
+                        <h1 class="fd-txt-bold fd-txt-black"><strong>Cityscapes</strong></h1>
+                        <p class="fd-txt-white">自动驾驶大规模分割数据集，包含语义分割、实体分割等任务，是大规模分割类深度学习算法比对标的数据集之一</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="am-g am-container am-margin-vertical-lg">
+            <div class="am-u-lg-4 hover-scale-up" >
+                <a href="http://www.cvlibs.net/datasets/kitti/" target="_blank" style="text-decoration: none">
+                    <div class="pay-panel shadow-red am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #ff7f3c, #e57156);">
+                        <h1 class="fd-txt-bold fd-txt-black"><strong>KITTI</strong></h1>
+                        <p class="fd-txt-white">自动驾驶大规模数据集，包含通用车辆、行人检测、分割、激光雷达点云数据，以及相应的相机标定参数等信息</p>
+                    </div>
+                </a>
+            </div>
+            <div class="am-u-lg-4 hover-scale-up">
+                <a href="https://github.com/openimages/dataset" target="_blank" style="text-decoration: none">
+                    <div class="pay-panel shadow-green am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #39ffd8, #259c73);">
+                        <h1 class="fd-txt-bold fd-txt-black"><strong>Open Images</strong></h1>
+                        <p class="fd-txt-white">Google推出的大规模通用物体检测、分割标注数据集，官网可能需要科学上网，传送github地址，900多万张，7000多类</p>
+                    </div>
+                </a>
+            </div>
+            <div class="am-u-lg-4 hover-scale-up" >
+                <a href="https://www.mapillary.com" target="_blank" style="text-decoration: none">
+                    <div class="pay-panel shadow-purple am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #bc57ff, #9c2c7e);">
+                        <h1 class="fd-txt-bold fd-txt-black"><strong>Mapillary Datasets</strong></h1>
+                        <p class="fd-txt-white">Mapillary研究院推出的大规模自动驾驶数据集，包含大量的精细自动驾驶分割标注</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <!--<div class="am-g am-container am-margin-vertical-lg">-->
+            <!--<div class="am-u-lg-4" >-->
+                <!--<div class="pay-panel shadow-purple am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #bc57ff, #9c2c7e);">-->
+                    <!--<h1 class="fd-txt-bold fd-txt-black"><strong>VOC</strong></h1>-->
+                    <!--<p class="fd-txt-white">微软推出的包含目标检测、实例分割、人体关键点定位等标注的大规模标注数据集</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="am-u-lg-4">-->
+                <!--<div class="pay-panel shadow-green am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #39ffd8, #259c73);">-->
+                    <!--<h1 class="fd-txt-bold fd-txt-black"><strong>Microsoft CoCo</strong></h1>-->
+                    <!--<p class="fd-txt-white">微软推出的包含目标检测、实例分割、人体关键点定位等标注的大规模标注数据集</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="am-u-lg-4" >-->
+                <!--<div class="pay-panel shadow-red am-margin-sm am-padding-lg" style="background-image: -webkit-linear-gradient(left, #ff7f3c, #e57156);">-->
+                    <!--<h1 class="fd-txt-bold fd-txt-black"><strong>Cityscapes</strong></h1>-->
+                    <!--<p class="fd-txt-white">微软推出的包含目标检测、实例分割、人体关键点定位等标注的大规模标注数据集</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </section>
+
+    <section class="am-container" style="margin-top: 6rem">
+        <div>
+            <h1 class="fd-txt-black fd-txt-bold">奇异AI算法库</h1>
+        </div>
+        <nav data-am-widget="menu" class="am-menu am-menu-dropdown2" data-am-menu-collapse style="margin-top: 1rem">
+            <a href="javascript: void(0)" class="am-menu-toggle">
+                <i class="am-menu-toggle-icon am-icon-bars"></i>
+            </a>
+            <ul class="am-menu-nav am-avg-sm-2 am-collapse">
+                <li class="am-parent">
+                    <a href="##" class="" >排序</a>
+                    <ul class="am-menu-sub am-collapse am-avg-sm-2 " id="collapse-sort">
+                        <li class="">
+                            <a href="##" class="" @click="sortTime">时间</a>
+                        </li>
+                        <li class="">
+                            <a href="##" class="" @click="sortDownload">下载量</a>
+                        </li>
+                        <li class="">
+                            <a href="##" class="" @click="sortStar">收藏量</a>
+                        </li>
+                        <li class="">
+                            <a href="##" class="" @click="sortPrice">价格</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="am-parent">
+                    <a href="##" class="" >框架: <strong>{{currentFramework}}</strong></a>
+                    <ul class="am-menu-sub am-collapse  am-avg-sm-3 " id="collapse-framework">
+                        <li class="" v-for="i in frameworkMap">
+                            <a href="##" class="" @click="filterFramework(i)">{{i}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="am-parent">
+                    <a href="#c3" class="" >语言: <strong>{{currentLan}}</strong></a>
+                    <ul class="am-menu-sub am-collapse  am-avg-sm-4 " id="collapse-lan">
+                        <li class="" v-for="i in lanMap">
+                            <a href="##" class=""  @click="filterLan(i)">{{i}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="am-parent">
+                    <a href="##" class="">一级分类: <strong>{{currentCat}}</strong></a>
+                    <ul class="am-menu-sub am-collapse  am-avg-sm-3 " id="collapse-cat">
+                        <li class="" v-for="i in catClass1">
+                            <a href="##" class="" @click="filterCat(i)">{{i}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="am-container">
+            <ul data-am-widget="gallery" class="am-gallery am-avg-sm-1 am-avg-md-2 am-avg-lg-3
+            am-gallery-default" data-am-gallery="{  }">
+                <li v-for="aicode in allAiCodesShow">
+                    <div class="hover-scale-up">
+                        <div class="card" @click="jumpDetail(aicode)" style="margin-top: 1rem">
+                            <img class="card-img-top" :src="aicode.code_pic_url" style="max-width: 100%;">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: black">{{aicode.code_title}}</h4>
+                                <span class="badge badge-secondary">{{frameworkMap[aicode.code_framework]}}</span>
+                                <span class="badge badge-warning">{{lanMap[aicode.code_lan]}}</span>
+                                <span class="badge badge-primary">{{catClass1[aicode.code_category_class_1]}}</span>
+                                <div>
+                                    <span class="badge badge-pill badge-light">Author: {{aicode.code_author_user_name}}</span>
+                                    <div class="am-fr">
+                                        <div class="am-icon-heart" style="color: rgba(47,47,47,0.69);">&nbsp;{{aicode.code_glances_num}}</div>
+                                        <div class="am-icon-download" style="color: rgba(47,47,47,0.69);padding-left: 10px">&nbsp;{{aicode.code_downloads_num}}</div>
+                                    </div>
+                                </div>
+
+                                <p class="card-text fd-txt-sm-b fd-txt-gray">{{aicode.code_desc}}</p>
+                                <p class="fd-txt-xs">{{aicode.code_pub_time}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="am-text-center am-margin-vertical-lg" style="margin-top: 10rem">
+                <button v-if="currentPage > 1" class="btn btn-pill btn-white am-padding-md" style="font-size: 2.5rem" @click="prevPage"><span class="am-icon-angle-left"></span></button>
+                <button class="btn btn-pill btn-white am-padding-md" style="font-size: 2.5rem" @click="nextPage"><span class="am-icon-angle-right"></span></button>
+            </div>
+
+            <div v-if="isShowNoMore" class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" @click="close" data-dismiss="alert" aria-label="Close" style="border-radius: 50%">
+                    <span aria-hidden="true" class="am-icon-close"></span>
+                </button>
+                已经没有更多算法了
+            </div>
+
+        </div>
+
+        <section class="am-container" style="margin-top: 6rem">
+            <div>
+                <h1 class="fd-txt-black fd-txt-bold">奇异社群</h1>
+            </div>
+            <div class="am-text-center">
+                <h2>与千万奇异AI学习者一起来学习AI！</h2>
+                <img src="images/qrcode_sai.jpg" width="100" height="100" style="box-shadow:0 3px 30px 10px rgba(205,197,198,0.39);
+                border-radius: 6px;margin-top: 5rem">
+                <p>扫描上方二维码，点击下方菜单栏即可加入相应社群，微信群二维码定期更新，如未能加入，请联系客服</p>
+
+                <!--<div  class="am-g">-->
+                    <!---->
+                    <!--<div class="am-u-sm-12 am-u-md-2 am-u-lg-2 am-padding-lg">-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </section>
+
+        <section class="am-container am-padding-lg" style="margin-top: 15rem">
+            <h3 class="fd-text-lg-gray">奇异AI服务条款须知</h3>
+            <p class="fd-text-sm-gray">我们的所有项目基于GPL开源协议，许多代码具有我们自己的知识产权，我们以少许的价格提供给需要者，不再保有代码所有权，所有产品均可以自由采用。</p>
+            <p class="fd-text-sm-gray">我们的项目代码部分基于开源项目改进，这些代码包含了license文件，如商用，请勿删除license。</p>
+            <p class="fd-text-sm-gray">由于我们对模型的整理、部署文档的编写、模型的预训练需要大量的人力、物力和财力，因此采取少量费用的形式提供，请大家谅解。</p>
+            <p class="fd-text-sm-gray">所有模型源码托管于Gitee。</p>
+            <p class="fd-text-sm-gray">凡从本网站付费下载的代码、模型不得用于二次分发，否则奇异AI有权进行法律维权。</p>
+            <p class="fd-text-sm-gray">下载本网站代码、模型，拷贝NoteBook文件，均代表您仔细阅读了本条款，并表示同意。</p>
+        </section>
+    </section>
+</div>
+
+
+<footer class="blog-footer" style="background-image: -webkit-linear-gradient(left, #14050f, #14050f);">
+    <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-footer-padding">
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <h3>StrangeAI 团队简介</h3>
+            <p class="am-text-sm">StrangeAI团队提供AI工业级别AI算法<br> 区块链/计算机视觉/强化学习 <br>
+                由来自腾讯、浙大、新加坡南阳理工大学硕博组成的高精尖科技团队，团队在自动驾驶、智能安防等领域具有多项创新性成果</p>
+        </div>
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <h3>社交账号</h3>
+            <p>
+                <a href=""><span class="am-icon-qq am-icon-btn fd-clr-gray"></span></a>
+                <a href="https://github.com/Strange-AI" target="_blank"><span class="am-icon-github am-icon-btn fd-clr-gray"></span></a>
+                <a href=""><span class="am-icon-weibo am-icon-btn fd-clr-gray"></span></a>
+                <a href=""><span class="am-icon-reddit am-icon-btn fd-clr-gray"></span></a>
+                <a href=""><span class="am-icon-weixin am-icon-btn fd-clr-gray"></span></a>
+            </p>
+            <h3>Credits</h3>
+            <p>我们追求卓越，然时间、经验、能力有限。StrangeAI 有很多不足的地方，希望大家包容、不吝赐教，给我们提意见、建议。感谢你们！</p>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <h3>友情链接</h3>
+            <ul>
+                <li><a href="https://www.openai.com/" target="_blank">OpenAI</a></li>
+                <li ><a href="" target="_blank">DeepMind</a></li>
+                <li><a href="http://bs.loliloli.pro" target="_blank">白说</a></li>
+                <li><a href="http://loliloli.pro" target="_blank">Path</a></li>
+                <li><a href="https://tensorflow.org" target="_blank">TensorFlow</a></li>
+            </ul>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-3 am-u-lg-3">
+            <div style="height: 40px"></div>
+            <ul class="am-avg-sm-1 am-avg-md-2 am-avg-lg-2">
+                <li class="am-animation-slide-top am-text-center"
+                    data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                    <img src="img/qrcode.png" alt="" width="60%" height="60%">
+                    <p><i class="am-icon-weixin"></i> 合作微信</p>
+                </li>
+                <li class="am-animation-slide-top am-text-center"
+                    data-am-scrollspy="{animation:'slide-bottom', delay: 20}">
+                    <img src="./images/qrcode_sai.jpg" alt="" width="60%" height="60%">
+                    <p><i class="am-icon-download"></i> 关注公众号</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="blog-text-center">© 2018 奇异(StrangeAI), Inc. All Rights Reserved</p>
+</footer>
+
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<![endif]-->
+<script src="https://cdn.bootcss.com/marked/0.4.0/marked.min.js"></script>
+<script src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./scripts/index.js"></script>
+
+</body>
+</html>
